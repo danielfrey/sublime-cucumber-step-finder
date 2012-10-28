@@ -1,0 +1,4 @@
+[
+  { "keys": ["super+y"], "command": "cucumber_step_finder" }
+]
+

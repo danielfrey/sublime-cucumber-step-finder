@@ -1,0 +1,4 @@
+{
+    "cucumber_features_path"  :  "features",
+    "cucumber_step_pattern"   :  ".*_steps.*\\.rb"
+}
