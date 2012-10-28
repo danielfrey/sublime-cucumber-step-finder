@@ -1,9 +1,9 @@
 # Sublime Text 2 plugin: Cucumber Step Finder
 
-This plugin supports Rails developers in easier finding their cucumber steps.
+This plugin supports Rails developers to easily navigate to their cucumber (http://cukes.info) steps.
 
 It provides a command, listing all steps in the open project and lets you choose
-a step using the builtin mechanism for search.
+a step using the built-in mechanism for search.
 
 #Installation
 ## Mac OSX (manual)
@@ -11,7 +11,7 @@ a step using the builtin mechanism for search.
     git clone git://github.com/danielfrey/sublime-cucumber-step-finder.git CucumberStepFinder
 
 ## Linux/Windows
-Not tested yet. Contributions are welcome. If Keyboard-Setting are provided, it should work.
+Not tested yet. Contributions are welcome. If keyboard settings are provided, it should work.
 
 
 
@@ -19,7 +19,7 @@ Not tested yet. Contributions are welcome. If Keyboard-Setting are provided, it 
 As soon as it's listed in the Package Manager Channel I will update this section...
 
 ## Usage
-The deafult key-binding is `cmd+y`
+The default key-binding is `cmd+y`
 Change it if it's already used in your configuration
 
 ## Configuration
