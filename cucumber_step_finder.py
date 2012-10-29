@@ -62,7 +62,7 @@ class CucumberStepFinderCommand(sublime_plugin.WindowCommand):
     view = self.window.active_view()
 
     if view.is_loading():
-      sublime.set_timeout(self.highlight_step, 50)
+      sublime.set_timeout(self.mark_step, 50)
     else:
       # if view == self.active_ref[0]:
       view.run_command("goto_line", {"line": self.active_ref[1]+1} )
