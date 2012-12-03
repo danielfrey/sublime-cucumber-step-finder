@@ -1,4 +1,5 @@
 [
-  { "keys": ["super+y"], "command": "cucumber_step_finder" }
+  { "keys": ["super+y"], "command": "cucumber_step_finder" },
+  { "keys": ["ctrl+super+n"], "command": "match_step" }
 ]
 

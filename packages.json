@@ -6,11 +6,11 @@
       "description": "Helps to navigate to steps in Cucumber(http://cukes.info)",
       "author": "Daniel Frey",
       "homepage": "https://github.com/danielfrey/sublime-cucumber-step-finder",
-      "last_modified": "2012-10-28 12:00:30",
+      "last_modified": "2012-12-03 21:14:00",
       "platforms": {
         "osx": [
           {
-            "version": "0.1.0",
+            "version": "0.2.0",
             "url": "https://nodeload.github.com/danielfrey/sublime-cucumber-step-finder/zipball/master"
           }
         ]

@@ -4,7 +4,8 @@
     "children":
     [
         {"id": "find_cucumber_step"},
-        { "command": "cucumber_step_finder", "caption": "Find Cucumber Step" }
+        { "command": "cucumber_step_finder", "caption": "Find Cucumber Step" },
+        { "command": "match_step", "caption": "Match Cucumber Step" }
     ]
 }
 ]
