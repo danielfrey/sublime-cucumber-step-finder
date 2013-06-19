@@ -21,7 +21,7 @@ class CucumberBaseCommand(sublime_plugin.WindowCommand, object):
     for folder in folders:
       for path in os.listdir(folder):
         full_path = os.path.join(folder, path)
-        if path == self.features_path:
+        if path == self.features_path or self.features_path == '.':
           self.step_files = []
           for root, dirs, files in os.walk(full_path):
             for f_name in files:
