@@ -23,7 +23,7 @@ class CucumberBaseCommand(sublime_plugin.WindowCommand, object):
         full_path = os.path.join(folder, path)
         if path == self.features_path:
           self.step_files = []
-          for root, dirs, files in os.walk(full_path):
+          for root, dirs, files in os.walk(full_path, followlinks=True):
             for f_name in files:
               if re.match(self.step_pattern, f_name):
                 self.step_files.append((f_name, os.path.join(root, f_name)))
