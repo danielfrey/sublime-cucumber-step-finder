@@ -1,4 +1,4 @@
-# Sublime Text 2 plugin: Cucumber Step Finder
+# Sublime Text 2/3 plugin: Cucumber Step Finder
 
 This plugin supports Rails developers to easily navigate to their cucumber (http://cukes.info) steps.
 
