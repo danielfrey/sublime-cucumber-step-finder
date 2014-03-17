@@ -25,7 +25,7 @@ Installation through [package control](http://wbond.net/sublime_packages/package
 
 ## Usage
 The default key-binding for "search" is `super + y` (`ctrl + alt + y`), respectively
-`ctrl + super + m` (`ctrl + Shift + m`) for "match".
+`ctrl + super + m` (`ctrl + shift + m`) for "match".
 Change it if one is already used in your configuration
 
 ## Configuration
