@@ -24,8 +24,8 @@ Installation through [package control](http://wbond.net/sublime_packages/package
 * Search for `CucumberStepFinder`
 
 ## Usage
-The default key-binding for "search" is `super + y`, respectively
-`ctrl + super + m` for "match".
+The default key-binding for "search" is `super + y` (`ctrl + alt + y`), respectively
+`ctrl + super + m` (`ctrl + shift + m`) for "match".
 Change it if one is already used in your configuration
 
 ## Configuration
