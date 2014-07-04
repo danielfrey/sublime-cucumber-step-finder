@@ -1,0 +1,4 @@
+[
+	{ "command": "cucumber_step_finder", "caption": "Cucumber: Search steps" },
+	{ "command": "match_step", "caption": "Cucumber: Go to step definition" }
+]
