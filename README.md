@@ -47,7 +47,7 @@ By default English and German are predefined.
 To find out, which keywords to configure e.g. German (language code `de),
 type
 
-    cucumber --18n de
+    cucumber --i18n de
 
  into the console. The last argument is the language code.
  Add all words marked with "code" to the settings.
