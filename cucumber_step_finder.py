@@ -9,10 +9,21 @@ class CucumberBaseCommand(sublime_plugin.WindowCommand, object):
     sublime_plugin.WindowCommand.__init__(self, window)
     self.load_settings()
 
+  def settings_get(self, name):
+    # Get the plugin settings, default and user-defined.
+    plugin_settings = sublime.load_settings('CucumberStepFinder.sublime-settings')
+    # If this is a project, try to grab project-specific settings.
+    if sublime.active_window() and sublime.active_window().active_view():
+      project_settings = sublime.active_window().active_view().settings().get("CucumberStepFinder")
+    else:
+      project_settings = None
+    # Grab the setting, by name, from the project settings if it exists.
+    # Otherwise, default back to the plugin settings.
+    return (project_settings or {}).get(name, plugin_settings.get(name))
+
   def load_settings(self):
-    self.settings = sublime.load_settings("CucumberStepFinder.sublime-settings")
-    self.features_path = self.settings.get('cucumber_features_path')  # Default is "features"
-    self.step_pattern = self.settings.get('cucumber_step_pattern')    # Default is '.*_steps.*\.rb'
+    self.features_path = self.settings_get('cucumber_features_path')
+    self.step_pattern = self.settings_get('cucumber_step_pattern')
 
   def find_all_steps(self):
     pattern = re.compile(r'((.*)(\/\^.*))\$\/')
@@ -55,7 +66,7 @@ class CucumberBaseCommand(sublime_plugin.WindowCommand, object):
 class MatchStepCommand(CucumberBaseCommand):
   def __init__(self, window):
     CucumberBaseCommand.__init__(self, window)
-    self.words = self.settings.get('cucumber_code_keywords')
+    self.words = self.settings_get('cucumber_code_keywords')
 
   def run(self, file_name=None):
     self.get_line()

@@ -51,3 +51,14 @@ type
 
  into the console. The last argument is the language code.
  Add all words marked with "code" to the settings.
+
+### Project Specific Configuration
+These settings can be changed globally, or in your `.sublime-project` file.
+
+    "settings":
+    {
+      "CucumberStepFinder":
+      {
+        "cucumber_step_pattern": ".*\\.rb"
+      }
+    }
