@@ -7,7 +7,6 @@ import codecs
 class CucumberBaseCommand(sublime_plugin.WindowCommand, object):
   def __init__(self, window):
     sublime_plugin.WindowCommand.__init__(self, window)
-    self.load_settings()
 
   def settings_get(self, name):
     # Get the plugin settings, default and user-defined.
@@ -21,22 +20,20 @@ class CucumberBaseCommand(sublime_plugin.WindowCommand, object):
     # Otherwise, default back to the plugin settings.
     return (project_settings or {}).get(name, plugin_settings.get(name))
 
-  def load_settings(self):
-    self.features_path = self.settings_get('cucumber_features_path')
-    self.step_pattern = self.settings_get('cucumber_step_pattern')
-
   def find_all_steps(self):
+    features_path = self.settings_get('cucumber_features_path')
+    step_pattern = self.settings_get('cucumber_step_pattern')
     pattern = re.compile(r'((.*)(\/\^.*))\$\/')
     self.steps = []
     folders = self.window.folders()
     for folder in folders:
       for path in os.listdir(folder) + ['.']:
         full_path = os.path.join(folder, path)
-        if path == self.features_path:
+        if path == features_path:
           self.step_files = []
           for root, dirs, files in os.walk(full_path, followlinks=True):
             for f_name in files:
-              if re.match(self.step_pattern, f_name):
+              if re.match(step_pattern, f_name):
                 self.step_files.append((f_name, os.path.join(root, f_name)))
                 step_file_path = os.path.join(root, f_name)
                 with codecs.open(step_file_path, encoding='utf-8') as f:
@@ -66,7 +63,6 @@ class CucumberBaseCommand(sublime_plugin.WindowCommand, object):
 class MatchStepCommand(CucumberBaseCommand):
   def __init__(self, window):
     CucumberBaseCommand.__init__(self, window)
-    self.words = self.settings_get('cucumber_code_keywords')
 
   def run(self, file_name=None):
     self.get_line()
@@ -78,7 +74,8 @@ class MatchStepCommand(CucumberBaseCommand):
     self.cut_words(text_line)
 
   def cut_words(self, text):
-     upcased = [up.capitalize() for up in self.words]
+     words = self.settings_get('cucumber_code_keywords')
+     upcased = [up.capitalize() for up in words]
      expression = "^{0}".format('|^'.join(upcased))
 
      pattern = re.compile(expression)
