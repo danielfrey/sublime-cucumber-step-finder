@@ -44,17 +44,41 @@ class CucumberBaseCommand(sublime_plugin.WindowCommand, object):
                       self.steps.append((match.group(), index, step_file_path))
                     index += 1
 
+  def determine_other_pane(self):
+    active_group = self.window.active_group()
+    num_groups = self.window.num_groups()
+    layout = self.window.get_layout()
+    cells = layout['cells']
+    cols = layout['cols']
+    if num_groups == 1:
+      # Only pane. Create a new one.
+      self.window.run_command('set_layout', {
+        "cols": [0.0, 0.5, 1.0],
+        "rows": [0.0, 1.0],
+        "cells": [[0, 0, 1, 1], [1, 0, 2, 1]]
+        })
+      return 1
+    elif active_group == num_groups - 1:
+      # Last pane in window. Use the previous one.
+      return active_group - 1
+    elif len(cols) > 2 and cells[active_group][2] == len(cols) - 1:
+      # Last pane in row. Use the previous one.
+      return active_group - 1
+    else:
+      # Otherwise, use the next one.
+      return active_group + 1
+
   def step_found(self, index):
     if index >= 0:
       file_path = self.steps[index][2]
-      view = self.window.open_file(file_path)
-      self.active_ref = (view, self.steps[index][1])
+      other_pane = self.determine_other_pane()
+      self.window.focus_group(other_pane)
+      match_view = self.window.open_file(file_path)
+      self.active_ref = (match_view, self.steps[index][1])
       self.mark_step()
 
   def mark_step(self):
-
     view = self.window.active_view()
-
     if view.is_loading():
       sublime.set_timeout(self.mark_step, 50)
     else:
