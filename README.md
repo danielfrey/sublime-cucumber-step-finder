@@ -28,6 +28,8 @@ The default key-binding for "search" is `super + y` (`ctrl + alt + y`), respecti
 `ctrl + super + m` (`ctrl + shift + m`) for "match".
 Change it if one is already used in your configuration
 
+Alternatively super+click the line in a features file to find it's definition (OSX)
+
 ## Configuration
 The following settings are available so far.
 
