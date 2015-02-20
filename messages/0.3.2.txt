@@ -1,5 +1,5 @@
 CucumberStepFinder 0.3.2 Changelog:
 
 New Features
- - Support for per project-settings. Thanks to mark@mojotech.com
+ - Support for per project-settings and opening step file in different pane. Thanks to mark@mojotech.com
  - Mouse support for matching a line by pressing super+click (OSX)
