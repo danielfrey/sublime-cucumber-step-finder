@@ -1,7 +1,0 @@
-CucumberStepFinder 0.2.0 Changelog:
-
-New Features
- - Added new feature: MatchingStepCommand
-   Given you are on a step in a "features" file, you can jump to the corresponding step by calling
-   the MatchStepCommand [ctrl+super+m]
-
