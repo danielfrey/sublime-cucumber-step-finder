@@ -1,0 +1,5 @@
+CucumberStepFinder 0.3.4 Changelog:
+
+Changes for OSX
+ - Mouse support for matching a line changed from super+click to alt+click, since under OSX the super+click
+   is already tied to add a cursor to the super-clicked position
