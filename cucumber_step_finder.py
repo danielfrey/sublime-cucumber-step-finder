@@ -76,8 +76,6 @@ class CucumberBaseCommand(sublime_plugin.WindowCommand, object):
       if open_in_different_pane:
         other_pane = self.determine_other_pane()
         self.window.focus_group(other_pane)
-      other_pane = self.determine_other_pane()
-      self.window.focus_group(other_pane)
       match_view = self.window.open_file(file_path)
       self.active_ref = (match_view, self.steps[index][1])
       self.mark_step()
