@@ -34,6 +34,7 @@ Alternatively super+click the line in a features file to find it's definition (O
 The following settings are available so far.
 
     {
+       "open_in_different_pane"  :  true,
        "cucumber_features_path"  :  "features",
        "cucumber_step_pattern"   :  ".*_steps.*\\.rb",
        "cucumber_code_keywords"  :  ["given", "when", "then", "and","but", "und", "dann", "wenn", "gegeben sei", "angenommen"]
@@ -53,6 +54,8 @@ type
 
  into the console. The last argument is the language code.
  Add all words marked with "code" to the settings.
+
+The option "open_in_different_pane" lets you define, whether the steps file is opened in a different pane or not. For those working with a single pane only, switch this flag to false.
 
 ### Project Specific Configuration
 These settings can be changed globally, or in your `.sublime-project` file.

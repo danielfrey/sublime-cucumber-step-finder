@@ -1,0 +1,4 @@
+CucumberStepFinder 0.3.5 Changelog:
+
+For useres not working with multiple panes there's an option to switch off opening the steps file in a different pane.
+For those, set "open_in_different_pane" to false in your settings file.
